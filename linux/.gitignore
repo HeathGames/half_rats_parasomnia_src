@@ -1,0 +1,11 @@
+# Ignore map files
+*_map.txt
+# Ignore built files
+release/*.dbg
+release/*.dSYM
+release/client.dylib
+release/client.so
+release/hrp.dylib
+release/hrp.so
+# Ignore object files
+release/obj

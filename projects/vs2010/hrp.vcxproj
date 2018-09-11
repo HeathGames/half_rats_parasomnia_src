@@ -1,0 +1,317 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Shipping|Win32">
+      <Configuration>Shipping</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{69DDADC0-97F4-419E-86EB-C91781A0D2E0}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>hrp</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Shipping|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Shipping|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir>$(Configuration)\$(ProjectName)\int\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir>$(Configuration)\$(ProjectName)\int\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Shipping|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir>$(Configuration)\$(ProjectName)\int\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;CLIENT_WEAPONS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <AdditionalIncludeDirectories>..\..\dlls;..\..\engine;..\..\common;..\..\pm_shared;..\..\game_shared;..\..\public;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <DisableSpecificWarnings>4996</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ModuleDefinitionFile>$(ProjectDir)..\hrp.def</ModuleDefinitionFile>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;CLIENT_WEAPONS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\dlls;..\..\engine;..\..\common;..\..\pm_shared;..\..\game_shared;..\..\public;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <DisableSpecificWarnings>4996</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <ModuleDefinitionFile>$(ProjectDir)..\hrp.def</ModuleDefinitionFile>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Shipping|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>Full</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;CLIENT_WEAPONS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\dlls;..\..\engine;..\..\common;..\..\pm_shared;..\..\game_shared;..\..\public;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <DisableSpecificWarnings>4996</DisableSpecificWarnings>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <ModuleDefinitionFile>$(ProjectDir)..\hrp.def</ModuleDefinitionFile>
+      <Version>1.0.0.0</Version>
+      <RegisterOutput>false</RegisterOutput>
+      <DataExecutionPrevention>false</DataExecutionPrevention>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\dlls\animating.cpp" />
+    <ClCompile Include="..\..\dlls\animation.cpp" />
+    <ClCompile Include="..\..\dlls\bmodels.cpp" />
+    <ClCompile Include="..\..\dlls\buttons.cpp" />
+    <ClCompile Include="..\..\dlls\cbase.cpp" />
+    <ClCompile Include="..\..\dlls\client.cpp" />
+    <ClCompile Include="..\..\dlls\combat.cpp" />
+    <ClCompile Include="..\..\dlls\defaultai.cpp" />
+    <ClCompile Include="..\..\dlls\doors.cpp" />
+    <ClCompile Include="..\..\dlls\effects.cpp" />
+    <ClCompile Include="..\..\dlls\explode.cpp" />
+    <ClCompile Include="..\..\dlls\func_break.cpp" />
+    <ClCompile Include="..\..\dlls\func_tank.cpp" />
+    <ClCompile Include="..\..\dlls\game.cpp" />
+    <ClCompile Include="..\..\dlls\gamerules.cpp" />
+    <ClCompile Include="..\..\dlls\genericmonster.cpp" />
+    <ClCompile Include="..\..\dlls\ggrenade.cpp" />
+    <ClCompile Include="..\..\dlls\globals.cpp" />
+    <ClCompile Include="..\..\dlls\hrp_ammo_45.cpp" />
+    <ClCompile Include="..\..\dlls\hrp_ammo_buckshot.cpp" />
+    <ClCompile Include="..\..\dlls\hrp_ammo_dynamitebox.cpp" />
+    <ClCompile Include="..\..\dlls\hrp_effects.cpp" />
+    <ClCompile Include="..\..\dlls\hrp_entity_ai_marker.cpp" />
+    <ClCompile Include="..\..\dlls\hrp_entity_baph_fire_ball.cpp" />
+    <ClCompile Include="..\..\dlls\hrp_entity_bernard_puke.cpp" />
+    <ClCompile Include="..\..\dlls\hrp_entity_bow_arrow.cpp" />
+    <ClCompile Include="..\..\dlls\hrp_entity_doktor_dart.cpp" />
+    <ClCompile Include="..\..\dlls\hrp_entity_huntsman_bolt.cpp" />
+    <ClCompile Include="..\..\dlls\hrp_items.cpp" />
+    <ClCompile Include="..\..\dlls\hrp_monster_armorman.cpp" />
+    <ClCompile Include="..\..\dlls\hrp_monster_baph.cpp" />
+    <ClCompile Include="..\..\dlls\hrp_monster_barnaby.cpp" />
+    <ClCompile Include="..\..\dlls\hrp_monster_bear.cpp" />
+    <ClCompile Include="..\..\dlls\hrp_monster_bernard.cpp" />
+    <ClCompile Include="..\..\dlls\hrp_monster_caleb.cpp" />
+    <ClCompile Include="..\..\dlls\hrp_monster_clown.cpp" />
+    <ClCompile Include="..\..\dlls\hrp_monster_culthermit.cpp" />
+    <ClCompile Include="..\..\dlls\hrp_monster_dog.cpp" />
+    <ClCompile Include="..\..\dlls\hrp_monster_doktor.cpp" />
+    <ClCompile Include="..\..\dlls\hrp_monster_duck.cpp" />
+    <ClCompile Include="..\..\dlls\hrp_monster_halfcat.cpp" />
+    <ClCompile Include="..\..\dlls\hrp_monster_halfrats.cpp" />
+    <ClCompile Include="..\..\dlls\hrp_monster_huntsman.cpp" />
+    <ClCompile Include="..\..\dlls\hrp_monster_man.cpp" />
+    <ClCompile Include="..\..\dlls\hrp_monster_maskboy.cpp" />
+    <ClCompile Include="..\..\dlls\hrp_monster_pig.cpp" />
+    <ClCompile Include="..\..\dlls\hrp_monster_publican.cpp" />
+    <ClCompile Include="..\..\dlls\hrp_monster_halfcat_snark.cpp" />
+    <ClCompile Include="..\..\dlls\hrp_monster_teddy.cpp" />
+    <ClCompile Include="..\..\dlls\hrp_monster_trask.cpp" />
+    <ClCompile Include="..\..\dlls\hrp_monster_traskboss.cpp" />
+    <ClCompile Include="..\..\dlls\hrp_monster_udcop.cpp" />
+    <ClCompile Include="..\..\dlls\hrp_monster_upperclassman.cpp" />
+    <ClCompile Include="..\..\dlls\hrp_monster_woman.cpp" />
+    <ClCompile Include="..\..\dlls\hrp_player.cpp" />
+    <ClCompile Include="..\..\dlls\hrp_triggers.cpp" />
+    <ClCompile Include="..\..\dlls\hrp_weapon_bow.cpp" />
+    <ClCompile Include="..\..\dlls\hrp_weapon_colt.cpp" />
+    <ClCompile Include="..\..\dlls\hrp_weapon_debug.cpp" />
+    <ClCompile Include="..\..\dlls\hrp_weapon_dynamite.cpp" />
+    <ClCompile Include="..\..\dlls\hrp_weapon_gatling.cpp" />
+    <ClCompile Include="..\..\dlls\hrp_weapon_henry.cpp" />
+    <ClCompile Include="..\..\dlls\hrp_weapon_saber.cpp" />
+    <ClCompile Include="..\..\dlls\hrp_weapon_shotgun.cpp" />
+    <ClCompile Include="..\..\dlls\h_ai.cpp" />
+    <ClCompile Include="..\..\dlls\h_cine.cpp" />
+    <ClCompile Include="..\..\dlls\h_cycler.cpp" />
+    <ClCompile Include="..\..\dlls\h_export.cpp" />
+    <ClCompile Include="..\..\dlls\items.cpp" />
+    <ClCompile Include="..\..\dlls\lights.cpp" />
+    <ClCompile Include="..\..\dlls\maprules.cpp" />
+    <ClCompile Include="..\..\dlls\monstermaker.cpp" />
+    <ClCompile Include="..\..\dlls\monsters.cpp" />
+    <ClCompile Include="..\..\dlls\monsterstate.cpp" />
+    <ClCompile Include="..\..\dlls\mortar.cpp" />
+    <ClCompile Include="..\..\dlls\multiplay_gamerules.cpp" />
+    <ClCompile Include="..\..\dlls\nodes.cpp" />
+    <ClCompile Include="..\..\dlls\observer.cpp" />
+    <ClCompile Include="..\..\dlls\pathcorner.cpp" />
+    <ClCompile Include="..\..\dlls\plane.cpp" />
+    <ClCompile Include="..\..\dlls\plats.cpp" />
+    <ClCompile Include="..\..\dlls\player.cpp" />
+    <ClCompile Include="..\..\dlls\rat.cpp" />
+    <ClCompile Include="..\..\dlls\schedule.cpp" />
+    <ClCompile Include="..\..\dlls\scientist.cpp" />
+    <ClCompile Include="..\..\dlls\scripted.cpp" />
+    <ClCompile Include="..\..\dlls\singleplay_gamerules.cpp" />
+    <ClCompile Include="..\..\dlls\skill.cpp" />
+    <ClCompile Include="..\..\dlls\sound.cpp" />
+    <ClCompile Include="..\..\dlls\soundent.cpp" />
+    <ClCompile Include="..\..\dlls\spectator.cpp" />
+    <ClCompile Include="..\..\dlls\squadmonster.cpp" />
+    <ClCompile Include="..\..\dlls\subs.cpp" />
+    <ClCompile Include="..\..\dlls\talkmonster.cpp" />
+    <ClCompile Include="..\..\dlls\teamplay_gamerules.cpp" />
+    <ClCompile Include="..\..\dlls\triggers.cpp" />
+    <ClCompile Include="..\..\dlls\util.cpp" />
+    <ClCompile Include="..\..\dlls\weapons.cpp" />
+    <ClCompile Include="..\..\dlls\world.cpp" />
+    <ClCompile Include="..\..\dlls\zombie.cpp" />
+    <ClCompile Include="..\..\game_shared\voice_gamemgr.cpp" />
+    <ClCompile Include="..\..\pm_shared\pm_debug.c" />
+    <ClCompile Include="..\..\pm_shared\pm_math.c" />
+    <ClCompile Include="..\..\pm_shared\pm_shared.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\dlls\activity.h" />
+    <ClInclude Include="..\..\dlls\activitymap.h" />
+    <ClInclude Include="..\..\dlls\animation.h" />
+    <ClInclude Include="..\..\dlls\basemonster.h" />
+    <ClInclude Include="..\..\dlls\cbase.h" />
+    <ClInclude Include="..\..\dlls\cdll_dll.h" />
+    <ClInclude Include="..\..\dlls\client.h" />
+    <ClInclude Include="..\..\dlls\decals.h" />
+    <ClInclude Include="..\..\dlls\defaultai.h" />
+    <ClInclude Include="..\..\dlls\doors.h" />
+    <ClInclude Include="..\..\dlls\effects.h" />
+    <ClInclude Include="..\..\dlls\enginecallback.h" />
+    <ClInclude Include="..\..\dlls\explode.h" />
+    <ClInclude Include="..\..\dlls\extdll.h" />
+    <ClInclude Include="..\..\dlls\func_break.h" />
+    <ClInclude Include="..\..\dlls\gamerules.h" />
+    <ClInclude Include="..\..\dlls\hrp_ammo_45.h" />
+    <ClInclude Include="..\..\dlls\hrp_ammo_buckshot.h" />
+    <ClInclude Include="..\..\dlls\hrp_ammo_dynamitebox.h" />
+    <ClInclude Include="..\..\dlls\hrp_effects.h" />
+    <ClInclude Include="..\..\dlls\hrp_entity_ai_marker.h" />
+    <ClInclude Include="..\..\dlls\hrp_entity_baph_fire_ball.h" />
+    <ClInclude Include="..\..\dlls\hrp_entity_bernard_puke.h" />
+    <ClInclude Include="..\..\dlls\hrp_entity_bow_arrow.h" />
+    <ClInclude Include="..\..\dlls\hrp_entity_doktor_dart.h" />
+    <ClInclude Include="..\..\dlls\hrp_entity_huntsman_bolt.h" />
+    <ClInclude Include="..\..\dlls\hrp_monster_base_shooter.h" />
+    <ClInclude Include="..\..\dlls\hrp_triggers.h" />
+    <ClInclude Include="..\..\dlls\hrp_weapon_colt.h" />
+    <ClInclude Include="..\..\dlls\hrp_weapon_dynamite.h" />
+    <ClInclude Include="..\..\dlls\hrp_weapon_gatling.h" />
+    <ClInclude Include="..\..\dlls\hrp_weapon_henry.h" />
+    <ClInclude Include="..\..\dlls\hrp_weapon_saber.h" />
+    <ClInclude Include="..\..\dlls\hrp_weapon_shotgun.h" />
+    <ClInclude Include="..\..\dlls\items.h" />
+    <ClInclude Include="..\..\dlls\monsterevent.h" />
+    <ClInclude Include="..\..\dlls\monsters.h" />
+    <ClInclude Include="..\..\dlls\nodes.h" />
+    <ClInclude Include="..\..\dlls\plane.h" />
+    <ClInclude Include="..\..\dlls\player.h" />
+    <ClInclude Include="..\..\dlls\saverestore.h" />
+    <ClInclude Include="..\..\dlls\schedule.h" />
+    <ClInclude Include="..\..\dlls\scripted.h" />
+    <ClInclude Include="..\..\dlls\scriptevent.h" />
+    <ClInclude Include="..\..\dlls\skill.h" />
+    <ClInclude Include="..\..\dlls\soundent.h" />
+    <ClInclude Include="..\..\dlls\spectator.h" />
+    <ClInclude Include="..\..\dlls\squadmonster.h" />
+    <ClInclude Include="..\..\dlls\talkmonster.h" />
+    <ClInclude Include="..\..\dlls\teamplay_gamerules.h" />
+    <ClInclude Include="..\..\dlls\trains.h" />
+    <ClInclude Include="..\..\dlls\util.h" />
+    <ClInclude Include="..\..\dlls\vector.h" />
+    <ClInclude Include="..\..\dlls\weapons.h" />
+    <ClInclude Include="..\..\dlls\zombie.h" />
+    <ClInclude Include="..\..\engine\eiface.h" />
+    <ClInclude Include="..\..\pm_shared\pm_debug.h" />
+    <ClInclude Include="..\..\pm_shared\pm_defs.h" />
+    <ClInclude Include="..\..\pm_shared\pm_info.h" />
+    <ClInclude Include="..\..\pm_shared\pm_materials.h" />
+    <ClInclude Include="..\..\pm_shared\pm_movevars.h" />
+    <ClInclude Include="..\..\pm_shared\pm_shared.h" />
+    <ClInclude Include="resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\dlls\hrp_weapon_halfcat.cpp">
+      <FileType>Document</FileType>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="hrp.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

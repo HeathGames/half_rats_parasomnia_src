@@ -1,0 +1,10 @@
+# Force CRLF for Windows files:
+*.bat text eol=crlf
+*.dsp text eol=crlf
+*.dsw text eol=crlf
+*.sln text eol=crlf
+*.vcxproj text eol=crlf
+*.vcxproj.filters text eol=crlf
+# Force LF for Linux files:
+*.sh text eol=lf
+*Makefile* text eol=lf
