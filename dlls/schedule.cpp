@@ -878,6 +878,13 @@ void CBaseMonster :: StartTask ( Task_t *pTask )
 		}
 	case TASK_MOVE_TO_TARGET_RANGE:
 		{
+			// Shepard - Half-Cat might try to go to an invalid fish! Don't do that
+			if ( !m_hTargetEnt )
+			{
+				TaskFail();
+				break;
+			}
+
 			if ( (m_hTargetEnt->pev->origin - pev->origin).Length() < 1 )
 				TaskComplete();
 			else
@@ -891,6 +898,13 @@ void CBaseMonster :: StartTask ( Task_t *pTask )
 	case TASK_RUN_TO_TARGET:
 	case TASK_WALK_TO_TARGET:
 		{
+			// Shepard - Half-Cat might try to go to an invalid fish! Don't do that
+			if ( !m_hTargetEnt )
+			{
+				TaskFail();
+				break;
+			}
+
 			Activity newActivity;
 
 			if ( (m_hTargetEnt->pev->origin - pev->origin).Length() < 1 )

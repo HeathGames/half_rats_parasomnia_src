@@ -443,7 +443,7 @@ void CHalfCat::PrescheduleThink( void )
 					break;
 				}
 			}*/
-			ALERT( at_console, "[HR:P] Half-Cat - Failed to reach destination!" );
+			ALERT( at_console, "[HR:P] Half-Cat - Failed to reach destination!\n" );
 			m_iAIMarkerTries = 0;
 		}
 		else
@@ -692,7 +692,7 @@ void CHalfCat::HCFollowerUse( CBaseEntity *pActivator, CBaseEntity *pCaller, USE
 	{
 		DeclineFollowing();
 		StopFollowing( FALSE );
-		ALERT( at_console, "[HR:P] Half-Cat - Can\'t follow you, you threw a fish!" );
+		ALERT( at_console, "[HR:P] Half-Cat - Can\'t follow you, you threw a fish!\n" );
 		return;
 	}
 
