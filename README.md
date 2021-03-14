@@ -41,7 +41,7 @@ Half-Rats: Parasomnia's code has been written by Osiris and Joël "Shepard62FR" 
 - Claudio "SysOp" Ficara for the AI marker (Half-Cat's fish) from Arrangement.
 - Dominik "ripieces" Tugend for the input code fixes under Linux and Mac.
 - Laurie "LRC" Cheers for the fixes and some entities implemented within Spirit of Half-Life.
-- Marc-Antoine "malortie" Lortie for the fixes for modern Visual Studio and GCC versions.
+- Marc-Antoine "malortie" Lortie for the fixes for modern Visual Studio versions.
 - Sam "Solokiller" Vanheer for the Armored Fucker's shield AI code, network fixes and minor other stuff.
 - Valve Software for the GoldSrc engine.
 - Id Software (now a ZeniMax company) for the QuakeWorld/id Tech 2 (Quake II) engines which GoldSrc is based upon and has fixes from respectively.
